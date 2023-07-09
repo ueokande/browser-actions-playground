@@ -17,3 +17,5 @@ jobs:
       shell: cmd
     - run: |
         & "${{ steps.setup-chrome.outputs.chrome-path }}" --headless --dump-dom https://example.com/
+    - run: |
+        Start-Process -FilePath "${{ steps.setup-chrome.outputs.chrome-path }}" -ArgumentList "--headless --dump-dom https://example.com/"

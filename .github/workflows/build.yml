@@ -14,3 +14,4 @@ jobs:
             chrome-version: stable
         - run: |
             echo ${{ steps.setup-chrome.outputs.chrome-path }}
+          shell: cmd

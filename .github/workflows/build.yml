@@ -8,10 +8,9 @@ jobs:
     name: Build
     runs-on: windows-latest
     steps:
-        - uses: actions/checkout@v3
-        - uses: browser-actions/setup-chrome@v1
-          with:
-            chrome-version: stable
-        - run: |
-            echo ${{ steps.setup-chrome.outputs.chrome-path }}
-          shell: cmd
+    - uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+    - run: |
+        echo ${{ steps.setup-chrome.outputs.chrome-path }}
+      shell: cmd

@@ -16,4 +16,4 @@ jobs:
         "${{ steps.setup-chrome.outputs.chrome-path }}" --headless --dump-dom https://example.com/
       shell: cmd
     - run: |
-        "${{ steps.setup-chrome.outputs.chrome-path }}" --headless --dump-dom https://example.com/
+        & ${{ steps.setup-chrome.outputs.chrome-path }} --headless --dump-dom https://example.com/

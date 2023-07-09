@@ -13,6 +13,9 @@ jobs:
         chrome-version: stable
       id: setup-chrome
     - run: |
+        (Get-Item (Get-Command "${{ steps.setup-chrome.outputs.chrome-path }}").Source).VersionInfo.ProductVersion
+        
+    - run: |
         "${{ steps.setup-chrome.outputs.chrome-path }}" --headless --dump-dom https://example.com/
       shell: cmd
     - run: |

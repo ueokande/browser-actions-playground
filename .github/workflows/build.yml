@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: browser-actions/setup-chrome@v1
+          with:
+            chrome-version: stable
+        - run: |
+            echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+            ${{ steps.setup-chrome.outputs.chrome-path }} --version

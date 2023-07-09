@@ -21,4 +21,4 @@ jobs:
     - run: |
         & "${{ steps.setup-chrome.outputs.chrome-path }}" --headless --dump-dom https://example.com/
     - run: |
-        Start-Process -FilePath "${{ steps.setup-chrome.outputs.chrome-path }}" -ArgumentList "--headless --dump-dom https://example.com/"
+        & "${{ steps.setup-chrome.outputs.chrome-path }}" --virtual-time-budget=10000 --headless --dump-dom "https://whichbrowser.net/"

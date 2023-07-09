@@ -14,4 +14,8 @@ jobs:
             chrome-version: stable
         - run: |
             echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
-            ${{ steps.setup-chrome.outputs.chrome-path }} --version
+            & ${{ steps.setup-chrome.outputs.chrome-path }} --incognito
+        - run: |
+            echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+            ${{ steps.setup-chrome.outputs.chrome-path }} --incognito
+          shell: cmd

@@ -13,5 +13,5 @@ jobs:
         chrome-version: stable
       id: setup-chrome
     - run: |
-        echo ${{ steps.setup-chrome.outputs.chrome-path }}
+        ${{ steps.setup-chrome.outputs.chrome-path }} --version
       shell: cmd
